@@ -1,0 +1,63 @@
+Plan { // 3317.827350995807 km long
+  a0: startAt(l28)
+  a1: goTo(l13)
+  a2: goTo(l45)
+  a3: goTo(l46)
+  a4: goTo(l42)
+  a5: goTo(l10)
+  a6: goTo(l7)
+  a7: goTo(l43)
+  a8: goTo(l27)
+  a9: loadColis(b0)
+  a10: goTo(l43)
+  a11: goTo(l7)
+  a12: goTo(l10)
+  a13: goTo(l42)
+  a14: goTo(l46)
+  a15: goTo(l30)
+  a16: goTo(l47)
+  a17: unloadColis(b0)
+  a18: goTo(l30)
+  a19: goTo(l14)
+  a20: loadColis(b1)
+  a21: goTo(l26)
+  a22: goTo(l10)
+  a23: goTo(l7)
+  a24: goTo(l22)
+  a25: goTo(l18)
+  a26: goTo(l34)
+  a27: goTo(l2)
+  a28: goTo(l49)
+  a29: unloadColis(b1)
+
+  a0 < a1
+  a1 < a2
+  a2 < a3
+  a3 < a4
+  a4 < a5
+  a5 < a6
+  a6 < a7
+  a7 < a8
+  a8 < a9
+  a9 < a10
+  a10 < a11
+  a11 < a12
+  a12 < a13
+  a13 < a14
+  a14 < a15
+  a15 < a16
+  a16 < a17
+  a17 < a18
+  a18 < a19
+  a19 < a20
+  a20 < a21
+  a21 < a22
+  a22 < a23
+  a23 < a24
+  a24 < a25
+  a25 < a26
+  a26 < a27
+  a27 < a28
+  a28 < a29
+  a29 < a30
+}

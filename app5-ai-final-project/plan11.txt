@@ -1,0 +1,19 @@
+Plan { // 30.0 km long
+  a0: startAt(l0)
+  a1: loadColis(b0)
+  a2: goTo(l1)
+  a3: unloadColis(b0)
+  a4: goTo(l2)
+  a5: loadColis(b1)
+  a6: goTo(l3)
+  a7: unloadColis(b1)
+
+  a0 < a1
+  a1 < a2
+  a2 < a3
+  a3 < a4
+  a4 < a5
+  a5 < a6
+  a6 < a7
+  a7 < a8
+}
