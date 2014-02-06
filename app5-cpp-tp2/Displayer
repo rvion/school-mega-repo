@@ -1,0 +1,4 @@
+def
+#include <stdlib.h>  
+#include <SDL/SDL.h> // Librairie SDL
+ 
