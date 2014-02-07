@@ -1,0 +1,85 @@
+//@ refines "RArray6/RArray.java";
+
+public class RArray {
+
+    private /*@ spec_public @*/ Object[] tab;
+    private /*@ spec_public @*/ int size;
+
+    /*@ public invariant tab == null || tab != null && (\forall int i; 0 <= i && i < size; tab[i] != null);
+      @ public invariant tab == null || tab != null && (\forall int i; i >= size && i < tab.length; tab[i] == null);
+      @ public invariant size >= 0;
+      @ public invariant tab != null;
+      @*/
+
+    /*@ also
+      @ requires taille > 0;
+      @ ensures taille == tab.length;
+      @ ensures size == 0;
+      @*/
+    public RArray(int taille);
+
+    /*@ also
+      @ requires taille > 0;
+      @ ensures tab != null && size == array.length;
+      @ ensures tab.length >= taille;
+      @*/
+    public RArray(Object[] array, int taille);
+
+    /*@ also
+      @ ensures size == 0;
+      @ ensures \old(tab.length) == tab.length;
+      @*/
+    public void clear();
+
+    /*@ also
+      @ requires e != null;
+      @ ensures tab.length == \old(tab.length);
+      @ ensures size == \old(size);
+      @*/
+    public /*@ pure @*/ boolean contains(Object e);
+
+    /*@ also
+      @ requires e != null;
+      @ ensures tab.length == \old(tab.length);
+      @ ensures size == \old(size);
+      @ ensures (!contains(e) && \result == -1 )|| (\old(size) == size && \result >= 0);
+      @*/
+    public /*@ pure @*/ int index(Object e);
+
+    /*@ also
+      @ requires taille > size;
+      @ ensures taille == tab.length;
+      @*/
+    public void resize(int taille);
+
+    /*@ also
+      @ requires e != null;
+      @ ensures (\old(size) <  \old(tab.length) && tab.length == \old(tab.length)) ||
+                (\old(size) == \old(tab.length) && tab.length >  \old(tab.length));
+      @ ensures size == \old(size)+1;
+      @ ensures \old(contains(e)) || !\old(contains(e)) && index(e)==size-1;
+      @ ensures tab[size-1] == e;
+      @ ensures contains(e);
+      @*/
+    public void add(Object e);
+
+    /*@ also
+      @ requires index < size;
+      @ requires index >= 0;
+      @ ensures contains(e) == true;
+      @*/
+    public Object replace(Object e,int index);
+
+    /*@ also
+      @ ensures \old(tab.length) == tab.length;
+      @ ensures (index >= size || index < 0) || \old(size) == size+1;
+      @*/
+    public Object removeInd(int index);
+
+    /*@ also
+      @ ensures \old(tab.length) == tab.length;
+      @ ensures (!contains(e) && \result == false )|| (\old(size) == size+1 && \result == true);
+      @*/
+    public boolean remove(Object e);
+
+}
